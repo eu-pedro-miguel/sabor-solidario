@@ -1,0 +1,351 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css");
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Quicksand;
+}
+
+body {
+    min-height: 100vh;
+    display: grid;
+    justify-items: center;
+    align-content: start;
+    background-color: #aa4110;
+    color: #fffa90;
+}
+
+header {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+main {
+    width: 100%;
+}
+
+#titulo {
+    margin-top: 20px;
+    margin-bottom: 25px;
+}
+
+h1 > a {
+    color: #fae900;
+    text-decoration: none;
+}
+
+.navbar {
+    width: 100%;
+    background-color: #092988c5;
+    display: flex;
+    justify-content: center;
+}
+
+/* Lista */
+.nav-list {
+    display: flex;
+    gap: 50px;
+    list-style: none;
+    padding: 10px 0;
+}
+
+/* Li precisa ser referência */
+.nav-list li {
+    position: relative;
+}
+
+/* Links */
+.nav-list a {
+    text-decoration: none;
+    color: #f9f6f6;
+    font-weight: 500;
+    padding: 5px 0;
+    transition: color 0.6s ease;
+}
+
+/* Linha colada no fundo da navbar */
+.nav-list li::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -10px; /* mesma altura do padding da navbar */
+    width: 0;
+    height: 3px;
+    background-color: #ff9d00;
+    transition: width 0.3s ease;
+}
+
+/* Hover */
+@media (hover: hover) {
+    .nav-list li:hover::after {
+        width: 100%;
+    }
+
+    .nav-list a:hover {
+        color: #ff9d00;
+    }
+}
+
+/* =================== */
+/* ESTILOS DO SLIDER */
+/* =================== */
+
+.slider-container {
+    width: 100%;
+    max-width: none;
+    margin: 20px 0;
+    overflow: hidden;
+}
+
+.slider {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.slides {
+    display: flex;
+    transition: transform 1.0s ease-in-out;
+}
+
+.slide {
+    min-width: 100%;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Mantém proporção e cobre toda área */
+    display: block;
+}
+
+.slide:nth-child(1), 
+.slide:nth-child(2), 
+.slide:nth-child(3), 
+.slide:nth-child(4) {
+    background-color: transparent; /* Remove a cor laranja que esconde a imagem */
+}
+
+.slider-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    gap: 30px;
+}
+
+/* ADICIONE ESTA REGRA AQUI */
+.slider-btn {
+    background-color: #092988c5;
+    color: #f9f6f6;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.slider-btn i {
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.slider-btn:hover {
+    background-color: #ff9d00;
+    color: #092988c5;
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+    .slide {
+        height: 300px;
+        font-size: 1.5rem;
+    }
+    
+    .slider-controls {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+    
+    .slider-btn {
+        padding: 8px 16px;
+    }
+}
+
+.suges {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 40px;
+    width: 95%;
+    margin: 28px auto;
+}
+
+.item {
+    background-color: #e7e7e7;
+    color: #151515;
+    padding: 10px;
+    border: 5px solid #cbcbcb;
+    border-radius: 5px;
+    outline: 3px solid #000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transition: transform 0.1s ease, background-color 0.2s ease;
+}
+
+@media (hover: hover) {
+    .item:hover {
+        background-color: #ffffff;
+        transform: scale(1.01);
+    }
+}
+
+.img-container {
+    width: 100%;
+    height: 180px;    
+    overflow: hidden;  
+    border-radius: 2px;
+}
+
+.img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.detalhes-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5px 10px;
+    width: 100%;
+}
+
+.detalhes-grid .label {
+    text-align: left;
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.detalhes-grid .valor {
+    text-decoration: underline;
+    text-align: right;
+    font-weight: 600;
+    font-size: 16px;
+    white-space: nowrap;  
+    overflow: hidden;       
+    text-overflow: ellipsis;  
+    max-width: 100%;          
+    text-align: right;
+}
+
+.comprar {
+    display: inline-block;
+    text-decoration: none;
+    background-color: #4cd416;
+    padding: 10px 10px;
+    border-radius: 5px;
+    font-weight: 600;
+    text-align: center;
+    cursor: pointer;
+    border: none;
+    margin-top: 10px;
+    transition: background-color 0.2s ease;
+}
+
+@media (hover: hover) {
+    .comprar:hover {
+        background-color: #47c415;
+    }
+}
+
+.comprar > a {
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #fff;
+    font-size: 16px;
+}
+
+footer {
+    width: 100%;
+    background-color: #092988c5;
+    color: #f9f6f6;
+    margin-top: 40px;
+}
+
+/* Container principal */
+.footer-container {
+    display: flex;
+    flex-direction: row; /* 🔹 FLEX-DIRECTION PRINCIPAL */
+    justify-content: space-around;
+    align-items: flex-start;
+    padding: 30px 20px;
+    gap: 30px;
+}
+
+/* Colunas */
+.footer-col {
+    display: flex;
+    flex-direction: column; /* 🔹 FLEX-DIRECTION EM COLUNA */
+    gap: 10px;
+    max-width: 250px;
+}
+
+.footer-col h3,
+.footer-col h4 {
+    color: #ff9d00;
+}
+
+.footer-col ul {
+    list-style: none;
+}
+
+.footer-col a {
+    color: #f9f6f6;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+@media (hover: hover) {
+    .footer-col a:hover {
+        color: #ff9d00;
+    }
+}
+
+/* Parte inferior */
+.footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.2);
+    text-align: center;
+    padding: 15px;
+    font-size: 14px;
+}
+
+/* 📱 Responsividade */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column; /* 🔹 MUDA O FLEX-DIRECTION */
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-col {
+        align-items: center;
+    }
+}

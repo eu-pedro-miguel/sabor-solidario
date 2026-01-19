@@ -1,0 +1,344 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css");
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Quicksand;
+}
+
+body {
+    min-height: 100vh;
+    display: grid;
+    justify-items: center;
+    align-content: start;
+    background-color: #aa4110;
+    color: #fffa90;
+}
+
+header {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;   /* 🔥 ESSENCIAL */
+    align-items: center;      /* centraliza o conteúdo */
+}
+
+#titulo {
+    margin-top: 20px;
+    margin-bottom: 25px;
+}
+
+h1 > a {
+    color: #fae900;
+    text-decoration: none;
+}
+
+#gostou-suporte {
+    margin-top: 10px;
+}
+
+.sugestões {
+    font-size: 25px;
+}
+
+.pedido {
+    font-size: 12px;
+    width: 250px;
+    height: 150px;
+    display: grid;
+    justify-items: center;
+    background-color: #e7e7e7;
+    color: #151515;
+    border: 5px solid #cbcbcb;
+    border-radius: 5px;
+    outline: 3px solid #000;
+    transition: transform 0.1s ease, background-color 0.2s ease;
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+}
+
+@media (hover: hover) {
+    .pedido:hover {
+        background-color: #ffffff;
+        transform: scale(1.03);
+    }
+}
+
+.avaliar {
+    margin-top: 10px;
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+}
+
+.btn-like {
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #4cd416;
+    color: #fff;
+    border-radius: 50%;
+    font-size: 20px;
+    cursor: pointer;
+    outline: 3px solid #4a4a4a;
+    border: 5px solid #b1b1b1;
+}
+
+.btn-like:hover {
+    background-color: #49cc16;
+    color: #ececec;
+    outline: 3px solid #4a4a4a;
+    border: 5px solid #a3a3a3;
+}
+
+.btn-dislike {
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #e61010;
+    color: #fff;
+    border-radius: 50%;
+    font-size: 20px;
+    cursor: pointer;
+    outline: 3px solid #4a4a4a;
+    border: 5px solid #b1b1b1;
+}
+
+.btn-dislike:hover {
+    background-color: #cf1e1e;
+    color: #ececec;
+    outline: 3px solid #4a4a4a;
+    border: 5px solid #a3a3a3;
+}
+
+.mensagem {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    padding: 10px;
+    width: 250px;
+    border-radius: 5px;
+    outline: 3px solid #000;
+    text-align: center;
+    font-size: 15px;
+    font-weight: 450;
+    opacity: 0;
+    transform: translateY(5px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    pointer-events: none;
+}
+
+.mensagem.bom {
+    background-color: #17c117;
+    border: 5px solid #74df74;
+    color: #ffffff;
+}
+
+.mensagem.ruim {
+    background-color: #c51010;
+    border: 5px solid #d06060;
+    color: #ffffff;
+}
+
+.mensagem.visivel {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.voltar {
+    background-color: transparent;
+    border: none;
+    font: inherit;
+    cursor: pointer;
+}
+
+.voltar > a {
+    background-color: blue;
+    color: white;
+    padding: 5px;
+    text-decoration: none;
+    border-radius: 5px;
+    border: 1px solid #060692;
+}
+
+@media (hover: hover) {
+    .voltar > a:hover  {
+        background-color: #c9c9c9;
+    }
+}
+
+.suges {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 40px;
+    width: 95%;
+    margin: 28px auto;
+}
+
+.item {
+    background-color: #e7e7e7;
+    color: #151515;
+    padding: 10px;
+    border: 5px solid #cbcbcb;
+    border-radius: 5px;
+    outline: 3px solid #000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transition: transform 0.1s ease, background-color 0.2s ease;
+}
+
+@media (hover: hover) {
+    .item:hover {
+        background-color: #ffffff;
+        transform: scale(1.01);
+    }
+}
+
+.img-container {
+    width: 100%;
+    height: 180px;    
+    overflow: hidden;  
+    border-radius: 2px;
+}
+
+.img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.detalhes-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5px 10px;
+    width: 100%;
+}
+
+.detalhes-grid .label {
+    text-align: left;
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.detalhes-grid .valor {
+    text-decoration: underline;
+    text-align: right;
+    font-weight: 600;
+    font-size: 16px;
+    white-space: nowrap;  
+    overflow: hidden;       
+    text-overflow: ellipsis;  
+    max-width: 100%;          
+    text-align: right;
+}
+
+.comprar {
+    display: inline-block;
+    text-decoration: none;
+    background-color: #4cd416;
+    padding: 10px 10px;
+    border-radius: 5px;
+    font-weight: 600;
+    text-align: center;
+    cursor: pointer;
+    border: none;
+    margin-top: 10px;
+    transition: background-color 0.2s ease;
+}
+
+@media (hover: hover) {
+    .comprar:hover {
+        background-color: #47c415;
+    }
+}
+
+.comprar > a {
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #fff;
+    font-size: 16px;
+}
+
+footer {
+    width: 100%;
+    background-color: #092988c5;
+    color: #f9f6f6;
+    margin-top: 40px;
+}
+
+/* Container principal */
+.footer-container {
+    display: flex;
+    flex-direction: row; /* 🔹 FLEX-DIRECTION PRINCIPAL */
+    justify-content: space-around;
+    align-items: flex-start;
+    padding: 30px 20px;
+    gap: 30px;
+}
+
+/* Colunas */
+.footer-col {
+    display: flex;
+    flex-direction: column; /* 🔹 FLEX-DIRECTION EM COLUNA */
+    gap: 10px;
+    max-width: 250px;
+}
+
+.footer-col h3,
+.footer-col h4 {
+    color: #ff9d00;
+}
+
+.footer-col ul {
+    list-style: none;
+}
+
+.footer-col a {
+    color: #f9f6f6;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+@media (hover: hover) {
+    .footer-col a:hover {
+        color: #ff9d00;
+    }
+}
+
+/* Parte inferior */
+.footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.2);
+    text-align: center;
+    padding: 15px;
+    font-size: 14px;
+}
+
+/* 📱 Responsividade */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column; /* 🔹 MUDA O FLEX-DIRECTION */
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-col {
+        align-items: center;
+    }
+}
